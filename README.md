@@ -56,8 +56,8 @@ $response = $this->createServiceRequest(
 );
 
 // Get service request details from response
-$serviceRequestId       = $response->get(ServiceRequestResponse::FIELD_SERVICE_REQUEST_ID);
-$serviceRequestToken    = $response->get(ServiceRequestResponse::FIELD_TOKEN);
+$serviceRequestId = $response->get(ServiceRequestResponse::FIELD_SERVICE_REQUEST_ID);
+$serviceRequestToken = $response->get(ServiceRequestResponse::FIELD_TOKEN);
 
 // Get a list of service requests
 $serviceRequestsArray = $client->getAllServiceRequests(
