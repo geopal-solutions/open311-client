@@ -25,8 +25,12 @@ A usage example for the TorontoClient class can be found below. Please note that
 
 ```php
 
+use \GeoPal\Open311\Clients\TorontoClient;
+use \GeoPal\Open311\ServiceRequest;
+use \GeoPal\Open311\ServiceRequestResponse;
+
 // Creating a client instance
-$client = new \GeoPal\Open311\Clients\TorontoClient('myApiKey');
+$client = new TorontoClient('myApiKey');
 
 // List available services
 $servicesArray = $client->listServices();
@@ -52,8 +56,8 @@ $response = $this->createServiceRequest(
 );
 
 // Get service request details from response
-$serviceRequestId       = $response->get(\GeoPal\Open311\ServiceRequestResponse::FIELD_SERVICE_REQUEST_ID);
-$serviceRequestToken    = $response->get(\GeoPal\Open311\ServiceRequestResponse::FIELD_TOKEN);
+$serviceRequestId       = $response->get(ServiceRequestResponse::FIELD_SERVICE_REQUEST_ID);
+$serviceRequestToken    = $response->get(ServiceRequestResponse::FIELD_TOKEN);
 
 // Get a list of service requests
 $serviceRequestsArray = $client->getAllServiceRequests(
@@ -76,7 +80,7 @@ There is also another method to submit a service request:
 
 ```php
 
-$serviceRequest = \GeoPal\Open311\ServiceRequest::fromArray($serviceRequestDataArray);
+$serviceRequest = ServiceRequest::fromArray($serviceRequestDataArray);
 $response = $client->postServiceRequest($serviceRequest);
 
 ```
