@@ -305,7 +305,7 @@ abstract class BaseClient
     }
 
     /**
-     * Makes a HTML GET call through Guzzle and returns the
+     * Makes a HTTP GET call through Guzzle and returns the
      * resulting Response object
      *
      * @param string $command
@@ -351,7 +351,7 @@ abstract class BaseClient
     }
 
     /**
-     * Makes a HTML POST call through Guzzle and returns the
+     * Makes a HTTP POST call through Guzzle and returns the
      * resulting Response object
      *
      * @param string $command
